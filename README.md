@@ -4,7 +4,7 @@ Our team worked on the challenge which was aimed to help National parks of Finla
 
 ## Demo
 
-<img src="output.gif" width="450" height="450"/>
+<img src="output.gif" width="750" height="750"/>
 
 This template was borrowed from the Dash collection of [templates](https://dash-gallery.plotly.host/dash-oil-and-gas/). In the text below there is the original documentation. 
 
