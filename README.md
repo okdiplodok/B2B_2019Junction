@@ -16,8 +16,8 @@ Clone the git repo, then install the requirements with pip
 
 ```
 
-git clone https://github.com/plotly/dash-sample-apps
-cd dash-sample-apps/apps/dash-oil-and-gas
+git clone https://github.com/okdiplodok/B2B_2019Junction.git
+cd B2B_2019Junction
 pip install -r requirements.txt
 
 ```
