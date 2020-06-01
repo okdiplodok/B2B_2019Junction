@@ -211,12 +211,15 @@ def make_twitter_figure(year_slider):
             }
 
     # if year_slider is not None:
-    month_letters = [months_map[element] for element in year_slider]
+    month_letters = [months_map[element] for element in range(year_slider[0], year_slider[1] + 1)]
+    
 
     for_twitter_location = pd.read_csv('data/twitter_location_df.csv', header=0)
     selected = for_twitter_location.loc[for_twitter_location['month'].isin(month_letters)]
+    agg = selected.groupby(['country'])['count'].sum().reset_index()
+    print(agg)
 
-    fig = px.bar(selected, x='country', y='count')
+    fig = px.bar(agg, x='country', y='count')
 
     fig.update_traces(marker_color='#F45587', marker_line_color='black',
                       marker_line_width=1.5, opacity=0.8)
@@ -310,10 +313,7 @@ def make_map_stats(year_slider):
                                                                       "November", "December"])
 
     for_selecting = [months_map[i + 1] for i in range(year_slider[1])]
-    print(for_selecting)
     selected = entrance_data.loc[entrance_data['month'].isin(for_selecting)]
-    print(entrance_data)
-    print(selected)
 
     px.set_mapbox_access_token("pk.eyJ1IjoiamFja2x1byIsImEiOiJjajNlcnh3MzEwMHZtMzNueGw3NWw5ZXF5In0.fk8k06T96Ml9CLGgKmk81w")
 
